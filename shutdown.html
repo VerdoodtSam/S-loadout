@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Sam Verdoodt - Project one</title>
+        <meta name="description" content="This is my project one website.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="msapplication-TileColor" content="#e85e00">
+        <meta name="theme-color" content="#e85e00">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/screen.css">
+        <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"
+        integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU"
+        crossorigin="anonymous"></script>
+        <script src="script/shutdown.js"></script>
+        <script src="script/datahandler.js"></script>
+    </head>
+<body>
+    <header class="c-background-white c-text-center u-mb-md">
+        <div class="o-row u-pb-20">
+            <div class="o-container ">
+                <div class=" c-header ">
+                    <h1 class="c-hide-mobile">
+                        S-Loadout
+                    </h1>
+                <div class="o-row u-pt-clear">
+                    <div class="o-container">
+                            <div class="c-header">
+                                <h1 class=" c-text-inter-24-black c-hide-mobile u-ps-8">
+                                    <button class="o-button-reset c-button-topnav"><a class="c-nav-link" href="index.html">Overview</a></button>
+                                </h1>
+                                <h1 class="u-mb-clear c-hide-website c-text-inter-20-black u-ps-60">
+                                    shutdown
+                                </h1>
+                            </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="u-pb-30">
+        <section class="c-hide-website">
+             <div class="o-row">
+                 <div class="o-container">
+                    <button class="o-button-reset c-button-nav c-text-inter-14-reg"><a href="index.html">Back</a></button>
+                 </div>
+             </div>
+        </section>
+    </section>
+    <section class="c-background-white c-text-center u-mb-md">
+        <div class="o-row u-pb-20">
+            <div class="o-container ">
+                <div class=" c-header c-text-inter-20-black ">
+                    <h1>
+                        Are you sure you want to shutdown the RPI?
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="o-row u-pb-20">
+            <div class="o-container">
+                <div class="o-layout o-layout-gutter  c-text-center">
+                    <div class="o-layout__item u-1-of-3">
+                        <button class="o-button-reset c-button-ani c-text-inter-14-reg"><a href="index.html">No, return to the Overview</a></button>
+                    </div>
+                    <div class="o-layout__item u-1-of-3"></div>
+                    <div class="o-layout__item u-1-of-3">
+                        <button class="js-shutdown o-button-reset c-button-ani c-button-ani-shutdown c-text-inter-14-reg">Yes, please shutdown</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
