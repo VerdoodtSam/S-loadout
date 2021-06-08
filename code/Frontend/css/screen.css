@@ -1,0 +1,1179 @@
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: interstate, sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: rgb(223, 240, 247);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::selection {
+  background: #e85e00;
+  color: white;
+  text-shadow: none;
+}
+
+/*------------------------------------*\
+  #Elements
+\*------------------------------------*/
+
+/*
+    Elements: Images
+    ---
+    Default markup for images to make them responsive
+*/
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+img.bg {
+  z-index: -1;
+  min-height: 100%;
+  min-width: 1024px;
+
+  width: 100%;
+  height: auto;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  img.bg {
+    left: 50%;
+    margin-left: -512px;
+  }
+}
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+header {
+  margin-top: 2% !important;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 40px;
+  margin: 0 0 24px;
+}
+
+h2 {
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+  margin: 0 0 24px;
+}
+
+ul,
+ol {
+  padding-left: 24px;
+}
+
+li ul,
+li ol {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+  font-family: 'Times New Roman', serif;
+}
+
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+figcaption {
+  font-size: 12px;
+  line-height: 16px;
+  padding-top: 8px;
+  color: Grey;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 24px;
+}
+
+a {
+  color: rgb(115, 124, 128);
+  transition: all 0.1s ease-in-out;
+}
+
+a:visited,
+a:active {
+  color: rgb(115, 124, 128);
+}
+
+a:hover,
+a:focus {
+  color: Crimson;
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    margin-bottom: 0px !important;
+  }
+}
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+  padding: 24px 24px 0;
+  display: flow-root;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+
+.o-row--xl {
+  padding-top: 72px;
+  padding-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .o-row {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .o-row--md {
+    padding-top: 48px;
+    padding-bottom: 24px;
+  }
+
+  .o-row--lg {
+    padding-top: 72px;
+    padding-bottom: 48px;
+  }
+}
+
+@media (min-width: 992px) {
+  .o-row--xl {
+    padding-top: 96px;
+    padding-bottom: 72px;
+  }
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 90em; /* 90 * 16px = 1440px */
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+  display: flow-root;
+}
+
+.o-section + .o-section {
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .o-section--lg + .o-section--lg,
+  .o-section--xl + .o-section--xl {
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .o-section--xl + .o-section--xl {
+    margin-top: 72px;
+  }
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.o-layout__item {
+  flex-basis: 100%;
+}
+.o-layout-right {
+  align-items: right;
+}
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+  margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+  padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+  margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+  padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+  margin: 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+  padding: 0 24px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+  justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+  justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+  justify-content: center;
+}
+
+.o-layout--justify-space-around {
+  justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+  justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+  justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+  align-items: flex-start;
+}
+
+.o-layout--align-end {
+  align-items: flex-end;
+}
+
+.o-layout--align-center {
+  align-items: center;
+}
+
+.o-layout--align-baseline {
+  align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+  align-content: start;
+}
+
+.o-layout--align-content-end {
+  align-content: end;
+}
+
+.o-layout--align-content-center {
+  align-content: center;
+}
+
+.o-layout--align-content-space-around {
+  align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+  align-content: space-between;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+  list-style: none;
+  padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Component name
+    ---
+    Component description
+*/
+
+/*
+    Component: c-circle
+    ---
+    Component description
+*/
+.c-circle {
+  padding-top: 16px;
+}
+.c-circle-center {
+  display: flex;
+  justify-content: center;
+}
+/*
+    Component: c-box
+    ---
+    Component description
+*/
+.c-box-jcm {
+  justify-content: center;
+}
+.c-box-waardes {
+  background-color: white;
+  border-radius: 21px;
+  width: 312px;
+  height: fit-content;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.c-box-waardes-neo {
+  max-width: fit-content;
+}
+/*
+    Component: c-flex-right
+    ---
+    Component description
+*/
+.c-flex-right {
+  display: flex;
+  align-self: flex-end;
+}
+
+/*
+    Component: c-border
+    ---
+    Component description
+*/
+.c-border-round {
+  border-radius: 21px;
+}
+.c-border-bottom {
+  border-bottom: solid;
+}
+/*
+    Component: c-header
+    ---
+    Component css for header
+*/
+
+.c-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.c-header-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+/*
+    Component: c-hide-mobile
+    ---
+    Component hides text on mobile
+*/
+.c-hide-mobile {
+  display: none;
+}
+
+/*
+    Component: c-icon
+    ---
+    Component css for logo
+*/
+.c-icon {
+  display: flex;
+  align-items: flex-start;
+}
+
+/*
+    Component: c-background
+    ---
+    Component makes background given color of given element
+*/
+.c-background-yellow {
+  padding-left: 24px;
+  background-color: #ffe01b;
+}
+
+.c-background-white {
+  background-color: white;
+}
+.c-background-blue {
+  background-image: url('../img/scherma_fixed.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*
+    Component: c-text
+    ---
+    Component css for text 
+*/
+.c-text-center {
+  text-align: center;
+}
+.c-text-left {
+  text-align: left;
+}
+.c-text-inter-8-reg {
+  font-family: interstate, sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+  color: rgb(46, 50, 51);
+}
+.c-text-inter-14-reg {
+  text-align: center;
+  font-family: interstate, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(46, 50, 51);
+}
+.c-text-inter-20-black {
+  text-align: center;
+  font-family: interstate, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: rgb(115, 124, 128);
+}
+.c-text-inter-24-black {
+  text-align: center;
+  font-family: interstate, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: rgb(115, 124, 128);
+}
+/*
+    Component: c-button
+    ---
+    Component css for buttons
+*/
+.c-button {
+  padding-left: 34px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  padding-right: 34px;
+  background-color: #007c89;
+  color: white;
+  text-decoration: none;
+}
+
+.c-button-nav {
+  border-radius: 13px;
+  background-color: rgb(77, 201, 255);
+  padding: 8px;
+}
+.c-button-ani {
+  padding: 15px 25px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  background-color: rgb(77, 201, 255);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.c-button-ani-shutdown {
+  background-color: red;
+}
+
+.c-button-ani:active {
+  background-color: #007c89;
+  transform: translateY(4px);
+}
+
+.c-button-topnav {
+  padding-left: 8px;
+  padding-right: 8px;
+  border-left: 4px solid rgb(115, 124, 128);
+}
+/*
+    Component: C-block
+    ---
+    Component css for  blocks off html
+*/
+.c-block-p72 {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+/*
+    Component: c-nav
+    ---
+    Component css for navigation
+*/
+.c-nav-link {
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  padding: 8px 0;
+}
+.c-nav-link-current {
+  font-weight: 400;
+}
+.c-website-middle-details {
+  padding-bottom: 106px !important;
+}
+
+@media (min-width: 768px) {
+  .c-icon {
+    position: relative;
+    padding-left: 24px;
+  }
+  .c-text-general-44-Med {
+    font-size: 54px;
+    line-height: 56px;
+  }
+  .c-flex {
+    display: flex;
+  }
+
+  .c-header-nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  .c-nav-list {
+    display: flex;
+  }
+  .c-nav-link {
+    padding: 8px 20px;
+  }
+  .c-box-waardes {
+    max-width: fit-content;
+    height: fit-content;
+    max-height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .c-background-blue {
+    background-image: url('../img/scherma_fixed.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
+  .c-header {
+    justify-content: space-between;
+  }
+  .c-hide-mobile {
+    display: inherit;
+  }
+  .c-hide-website {
+    display: none;
+  }
+  .c-website-middle {
+    padding-top: 20%;
+  }
+  .c-website-middle-neo {
+    padding-top: 64px !important;
+    padding-bottom: 160px !important;
+  }
+  .c-text-inter-8-reg {
+    font-size: 14px;
+  }
+  .c-text-inter-14-reg {
+    font-size: 18px;
+  }
+  .c-box-waardes {
+    width: fit-content;
+  }
+  .c-box-neopixel {
+    height: fit-content;
+  }
+  .c-nav-link {
+    padding: 0px !important;
+  }
+  .c-box-waardes {
+    transform: scale(1.2);
+  }
+}
+@media (min-width: 1600px) {
+  .c-box-waardes {
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
+    top: 0;
+    position: relative;
+  }
+  .c-website-middle {
+    padding-top: 5%;
+  }
+}
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+  padding-top: 0 !important;
+}
+
+.u-pt-8 {
+  padding-top: 8px !important;
+}
+.u-mb-clear {
+  margin-bottom: 0 !important;
+}
+.u-pb-8 {
+  padding-bottom: 8px !important;
+}
+.u-pb-20 {
+  padding-bottom: 20px !important;
+}
+.u-pb-22 {
+  padding-bottom: 22px !important;
+}
+.u-pb-24 {
+  padding-bottom: 24px !important;
+}
+.u-pb-30 {
+  padding-bottom: 54px !important;
+}
+.u-pb-72 {
+  padding-bottom: 72px !important;
+}
+.u-pt-72 {
+  padding-top: 72px !important;
+}
+
+.u-pl-16 {
+  padding-left: 16px !important;
+}
+
+.u-pl-72 {
+  padding-left: 72px !important;
+}
+.u-ps-98 {
+  padding-left: 98px !important;
+  padding-right: 98px !important;
+}
+.u-ps-8 {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+.u-ps-24 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+.u-ps-60 {
+  padding-left: 60px !important;
+  padding-right: 60px !important;
+}
+.u-ps-80 {
+  padding-left: 110px !important;
+  padding-right: 90px !important;
+}
+
+.u-m-reset {
+  margin: 0 !important;
+}
+.u-ms-24 {
+  margin-left: 24px !important;
+  margin-right: 24px !important;
+}
+.u-mb-xs {
+  margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+  margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+  margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+  margin-bottom: 32px !important;
+}
+
+.u-mb-xl {
+  margin-bottom: 48px !important;
+}
+.u-pb-fill {
+  padding-bottom: 130px !important;
+}
+
+@media (min-width: 768px) {
+  .u-ps-24 {
+    padding-left: 137px !important;
+    padding-right: 136px !important;
+  }
+}
+@media (mid-width: 1024px) {
+  .u-pt-24 {
+    padding-top: 24px !important;
+  }
+}
+@media (min-width: 1600px) {
+  .u-mt-60 {
+    margin-top: 60px !important;
+  }
+  .u-ml-480 {
+    margin: auto !important;
+  }
+  .u-pb-middle {
+    padding-bottom: 150px !important;
+  }
+  .u-pb-fill {
+    padding-bottom: 348px !important;
+  }
+  .u-pb-details {
+    padding-bottom: 309px !important;
+  }
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-sm {
+  max-width: 36em !important;
+}
+
+.u-max-width-md {
+  max-width: 45em !important;
+}
+
+.u-max-width-lg {
+  max-width: 60em !important;
+}
+
+.u-max-width-xl {
+  max-width: 75em !important;
+}
+
+.u-max-width-none {
+  max-width: none !important;
+}
+
+/*
+    Utility: Flex
+    ---
+    Utility classes to put specific flex properties onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-flex-basis-auto {
+  flex-basis: auto !important;
+}
+
+.u-flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+.u-1-of-2 {
+  flex-basis: calc(100% / 2) !important;
+}
+
+.u-1-of-3 {
+  flex-basis: calc(100% / 3) !important;
+}
+
+.u-2-of-3 {
+  flex-basis: calc(100% / 3 * 2) !important;
+}
+
+.u-1-of-4 {
+  flex-basis: calc(100% / 4) !important;
+}
+
+.u-3-of-4 {
+  flex-basis: calc(100% / 4 * 3) !important;
+}
+
+.u-1-of-5 {
+  flex-basis: calc(100% / 5) !important;
+}
+
+.u-2-of-5 {
+  flex-basis: calc(100% / 5 * 2) !important;
+}
+
+.u-3-of-5 {
+  flex-basis: calc(100% / 5 * 3) !important;
+}
+
+.u-4-of-5 {
+  flex-basis: calc(100% / 5 * 4) !important;
+}
+
+.u-1-of-6 {
+  flex-basis: calc(100% / 6) !important;
+}
+
+.u-5-of-6 {
+  flex-basis: calc(100% / 6 * 5) !important;
+}
+
+@media (min-width: 576px) {
+  .u-1-of-2-bp1 {
+    flex-basis: calc(100% / 2) !important;
+  }
+  .u-1-of-3-bp1 {
+    flex-basis: calc(100% / 3) !important;
+  }
+  .u-2-of-3-bp1 {
+    flex-basis: calc(100% / 3 * 2) !important;
+  }
+  .u-1-of-4-bp1 {
+    flex-basis: calc(100% / 4) !important;
+  }
+  .u-3-of-4-bp1 {
+    flex-basis: calc(100% / 4 * 3) !important;
+  }
+  .u-1-of-5-bp1 {
+    flex-basis: calc(100% / 5) !important;
+  }
+  .u-2-of-5-bp1 {
+    flex-basis: calc(100% / 5 * 2) !important;
+  }
+  .u-3-of-5-bp1 {
+    flex-basis: calc(100% / 5 * 3) !important;
+  }
+  .u-4-of-5-bp1 {
+    flex-basis: calc(100% / 5 * 4) !important;
+  }
+  .u-1-of-6-bp1 {
+    flex-basis: calc(100% / 6) !important;
+  }
+  .u-5-of-6-bp1 {
+    flex-basis: calc(100% / 6 * 5) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .u-1-of-2-bp2 {
+    flex-basis: calc(100% / 2) !important;
+  }
+  .u-1-of-3-bp2 {
+    flex-basis: calc(100% / 3) !important;
+  }
+  .u-2-of-3-bp2 {
+    flex-basis: calc(100% / 3 * 2) !important;
+  }
+  .u-1-of-4-bp2 {
+    flex-basis: calc(100% / 4) !important;
+  }
+  .u-3-of-4-bp2 {
+    flex-basis: calc(100% / 4 * 3) !important;
+  }
+  .u-1-of-5-bp2 {
+    flex-basis: calc(100% / 5) !important;
+  }
+  .u-2-of-5-bp2 {
+    flex-basis: calc(100% / 5 * 2) !important;
+  }
+  .u-3-of-5-bp2 {
+    flex-basis: calc(100% / 5 * 3) !important;
+  }
+  .u-4-of-5-bp2 {
+    flex-basis: calc(100% / 5 * 4) !important;
+  }
+  .u-1-of-6-bp2 {
+    flex-basis: calc(100% / 6) !important;
+  }
+  .u-5-of-6-bp2 {
+    flex-basis: calc(100% / 6 * 5) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .u-1-of-2-bp3 {
+    flex-basis: calc(100% / 2) !important;
+  }
+  .u-1-of-3-bp3 {
+    flex-basis: calc(100% / 3) !important;
+  }
+  .u-2-of-3-bp3 {
+    flex-basis: calc(100% / 3 * 2) !important;
+  }
+  .u-1-of-4-bp3 {
+    flex-basis: calc(100% / 4) !important;
+  }
+  .u-3-of-4-bp3 {
+    flex-basis: calc(100% / 4 * 3) !important;
+  }
+  .u-1-of-5-bp3 {
+    flex-basis: calc(100% / 5) !important;
+  }
+  .u-2-of-5-bp3 {
+    flex-basis: calc(100% / 5 * 2) !important;
+  }
+  .u-3-of-5-bp3 {
+    flex-basis: calc(100% / 5 * 3) !important;
+  }
+  .u-4-of-5-bp3 {
+    flex-basis: calc(100% / 5 * 4) !important;
+  }
+  .u-1-of-6-bp3 {
+    flex-basis: calc(100% / 6) !important;
+  }
+  .u-5-of-6-bp3 {
+    flex-basis: calc(100% / 6 * 5) !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .u-1-of-2-bp4 {
+    flex-basis: calc(100% / 2) !important;
+  }
+  .u-1-of-3-bp4 {
+    flex-basis: calc(100% / 3) !important;
+  }
+  .u-2-of-3-bp4 {
+    flex-basis: calc(100% / 3 * 2) !important;
+  }
+  .u-1-of-4-bp4 {
+    flex-basis: calc(100% / 4) !important;
+  }
+  .u-3-of-4-bp4 {
+    flex-basis: calc(100% / 4 * 3) !important;
+  }
+  .u-1-of-5-bp4 {
+    flex-basis: calc(100% / 5) !important;
+  }
+  .u-2-of-5-bp4 {
+    flex-basis: calc(100% / 5 * 2) !important;
+  }
+  .u-3-of-5-bp4 {
+    flex-basis: calc(100% / 5 * 3) !important;
+  }
+  .u-4-of-5-bp4 {
+    flex-basis: calc(100% / 5 * 4) !important;
+  }
+  .u-1-of-6-bp4 {
+    flex-basis: calc(100% / 6) !important;
+  }
+  .u-5-of-6-bp4 {
+    flex-basis: calc(100% / 6 * 5) !important;
+  }
+}
+
+/*------------------------------------*\
+  #MEDIA
+\*------------------------------------*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: ' (' attr(href) ')';
+  }
+  abbr[title]:after {
+    content: ' (' attr(title) ')';
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^='#']:after,
+  a[href^='javascript:']:after {
+    content: '';
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

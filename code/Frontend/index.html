@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Sam Verdoodt - Project one</title>
+        <meta name="description" content="This is my project one website.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="msapplication-TileColor" content="#e85e00">
+        <meta name="theme-color" content="#e85e00">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/screen.css">
+        <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"
+        integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU"
+        crossorigin="anonymous"></script>
+        <script src="script/datahandler.js"></script>
+        <script src="script/app.js"></script>
+    </head>
+
+    <body>
+        <header class="c-background-white c-text-center u-mb-md">
+            <div class="o-row u-pb-20">
+                <div class="o-container ">
+                    <div class=" c-header ">
+                        <h1 class="c-hide-mobile">
+                            S-Loadout
+                        </h1>
+                    <div class="o-row u-pt-clear">
+                        <div class="o-container">
+                                <div class="c-header">
+                                    <h1 class="u-mb-clear c-hide-website c-text-inter-20-black">
+                                        Overview and status sensors
+                                    </h1>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <section>
+        <section class="c-website-middle">
+            <div class="o-row">
+                <div class="o-container">
+                    <div class="o-layout o-layout-gutter c-box-jcm">
+                        <div class="u-pb-22  o-layout__item u-1-of-3-bp3">
+                            <div class="c-box-waardes  c-box-waardes-hover">
+                                <div class="u-ms-24">
+                                    <div class="o-row u-pt-8">
+                                        <div class="o-container">
+                                            <div class=" c-text-inter-20-black c-text-center">Speed</div>
+                                            <div class="o-layout o-layout--gutter">
+                                                <div class=" js-circle-accel">
+                                                    <svg class="c-circle" height="70" width="50">
+                                                        <circle cx="25" cy="25" r="20" stroke="blue" stroke-width="5" fill="white" />
+                                                    </svg>
+                                                </div>
+                                                <div class=" c-text-inter-14-reg u-pl-16 o-layout_item u-1-of-2 ">
+                                                    <ul class="o-list">
+                                                        <li class="c-text-left">Value:</li>
+                                                        <li class="c-text-left js-accelero-waarde">...</li>
+                                                        <li class="c-text-left">Target Value:</li>
+                                                        <li class="c-text-left js-accelero-doel">12 m/s<sup>2</sup></li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                            <div class="c-text-center u-pb-20"><button class="js-button-da o-button-reset c-button-ani c-text-inter-14-reg"><a class="c-nav-link" href="details_speed.html">Details</a></button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-pb-22  o-layout__item u-1-of-3-bp3 u-ml-480">
+                            <div class="c-box-waardes ">
+                                <div class="u-ms-24">
+                                    <div class="o-row u-pt-8">
+                                        <div class="o-container">
+                                            <div class=" c-text-inter-20-black c-text-center u-pb-6">Hearth rate</div>
+                                            <div class="o-layout o-layout--gutter">
+                                                <div class=" js-circle-pulse">
+                                                    <svg class="c-circle" height="70" width="50">
+                                                        <circle cx="25" cy="25" r="20" stroke="blue" stroke-width="5" fill="white" />
+                                                    </svg>
+                                                </div>
+                                                <div class=" c-text-inter-14-reg u-pl-16 o-layout_item u-1-of-2">
+                                                    <ul class="o-list">
+                                                        <li class="c-text-left">Value:</li>
+                                                        <li class="c-text-left js-pulse-waarde">...</li>
+                                                        <li class="c-text-left">Target Value:</li>
+                                                        <li class="c-text-left js-pulse-doel">110 bpm</li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                            <div class="c-text-center u-pb-20"><button class="js-button-dp o-button-reset c-button-ani c-text-inter-14-reg"><a class="c-nav-link" href="details_pulse.html">Details</a></button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-pb-22  o-layout__item u-1-of-3-bp3 u-ml-480">
+                            <div class="c-box-waardes">
+                                <div class="u-ms-24">
+                                    <div class="o-row u-pt-8">
+                                        <div class="o-container">
+                                            <div class=" c-text-inter-20-black c-text-center u-pb-6">Air humidity</div>
+                                            <div class="o-layout o-layout--gutter">
+                                                <div class=" js-circle-gas">
+                                                    <svg class="c-circle" height="70" width="50">
+                                                        <circle cx="25" cy="25" r="20" stroke="blue" stroke-width="5" fill="white" />
+                                                    </svg>
+                                                </div>
+                                                <div class=" c-text-inter-14-reg u-pl-16 o-layout_item u-1-of-2">
+                                                    <ul class="o-list">
+                                                        <li class="c-text-left">Value:</li>
+                                                        <li class="c-text-left  js-gas-waarde">...</li>
+                                                        <li class="c-text-left">Target Value:</li>
+                                                        <li class="c-text-left  js-gas-doel">60 %</li>
+                                                    </ul> 
+                                                </div>
+                                            </div>
+                                            <div class=" c-text-center u-pb-20"><button class="js-button-dg o-button-reset c-button-ani c-text-inter-14-reg"><a class="c-nav-link" href="details_gas.html">Details</a></button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="c-website-middle u-pb-30">
+        <div class="o-row">
+            <div class="o-container">
+                <div class=" c-box-waardes c-box-waardes-neo c-box-jcm">
+                    <div class="c-text-center u-pt-8 u-pb-20 c-text-inter-20-black" >Neopixel</div>
+                    <div class=" js-circle-neopixelr c-circle-center u-pb-30 ">
+                        <svg class="c-circle" height="150" width="150">
+                            <circle cx="75" cy="75" r="50" stroke="Blue" stroke-width="10" fill="white" />
+                        </svg>
+                    </div>
+                    <div class="c-text-center u-pb-20">
+                        <button class="js-toggle o-button-reset c-button-ani c-text-inter-14-reg">
+                            Toggle
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="u-pb-20">
+        <button class="js-shutdown o-button-reset c-button-ani c-button-ani-shutdown c-text-inter-14-reg">
+            <a class="c-nav-link" href="shutdown.html">SHUTDOWN</a>
+        </button>
+    </section>
+    </body>
+</html> 
