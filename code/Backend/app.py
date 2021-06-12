@@ -38,12 +38,27 @@ status_neo = True
 
 
 def lees_data():
-    ips = str(check_output(['hostname', '--all-ip-addresses']))
-    ips = ips.split(" ")
-    lcd.send_instruction(0x1)
-    lcd.write_message("Het ip-adres is: ")
-    lcd.new_line()
-    lcd.write_message("{}".format(str(ips[1])))
+    ips = check_output(['hostname', '--all-ip-addresses'])
+    ip_list = ips.split()
+    new_list = []
+    for ip in ip_list:
+        ip = str(ip)
+        length = len(ip) - 1
+        ip = ip[2:length]
+        new_list.append(ip)
+        print(ip)
+    lcd.clear_screen()
+    if len(new_list) > 1:
+        lcd.send_instruction(0x1)
+        lcd.write_message("Het ip-adres is: ")
+        lcd.new_line()
+        lcd.write_message(f"{new_list[1]}")
+    else:
+        lcd.send_instruction(0x1)
+        lcd.write_message("Het ip-adres is: ")
+        lcd.new_line()
+        lcd.write_message(f"{new_list[0]}")
+
     print(ips[1])
     while True:
         print("reading")

@@ -122,28 +122,28 @@ void loop() {
     accel();
     gas();
     if (statusNeo) {
-      if (accelero <= 12.0) {
-        strip.fill(red,0,8);
+      if (accelero <= 20.0) {
+        strip.fill(red, 0, 8);
         strip.show();
       } else {
-        strip.fill(green,0,8);
+        strip.fill(green, 0, 8);
         strip.show();
       }
       if (bpm <= 110.0 && bpm > 50.0) {
-        strip.fill(green,8,8);
+        strip.fill(green, 8, 8);
         strip.show();
       } else {
-        strip.fill(red,8,8);
+        strip.fill(red, 8, 8);
         strip.show();
       }
       if (vochtigheid <= 60.0) {
-        strip.fill(green,16,8);
+        strip.fill(green, 16, 8);
         strip.show();
       } else {
-       strip.fill(red,16,8);
+        strip.fill(red, 16, 8);
         strip.show();
       }
-    }else{
+    } else {
       strip.clear();
       strip.show();
     }
@@ -160,7 +160,7 @@ void loop() {
     else if (command == "gas") {
       bluetoothPrintLine(String(vochtigheid));
     }
-    else if (command == "neo"){
+    else if (command == "neo") {
       statusNeo = !statusNeo;
       bluetoothPrintLine("switch done");
     }
@@ -212,5 +212,14 @@ void pulse() {
 
 void gas() {
   // Tell BME680 to begin measurement.
+  unsigned long endTime = bme.beginReading();
+  if (endTime == 0) {
+    Serial.println(F("Failed to begin reading :("));
+    return;
+  }
+  if (!bme.endReading()) {
+    Serial.println(F("Failed to complete reading :("));
+    return;
+  }
   vochtigheid = bme.humidity;
 }
